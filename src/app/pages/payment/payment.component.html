@@ -1,0 +1,25 @@
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th>Payment Satus</th>
+      <th>Result</th>
+      <th>FileAmount</th>
+      <th>AmountMultiplier</th>
+      <th>PaymentStatus</th>
+      <th>EmployeeCode</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.paymentStatus }}</td>
+      <td>{{ data.result }}</td>
+      <td>{{ data.fileAmount }}</td>
+      <td>{{ data.amountMultiplier }}</td>
+      <td>{{ data.paymentStatus }}</td>
+      <td>{{ data.employeeCode }}</td>
+    
+    </tr>
+  </tbody>
+</nz-table>

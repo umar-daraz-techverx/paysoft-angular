@@ -1,0 +1,36 @@
+<form [formGroup]="form" autocomplete="off" class="create-query-form padding-10">
+  <div *nzModalFooter>
+    <button nz-button nzType="primary" nzDanger (click)="destroyModal()">Cancel<i nz-icon nzType="close"
+        nzTheme="outline"></i></button>
+    <button nz-button nzType="primary" [disabled]="form.status==='INVALID' && !getStatus " [nzLoading]="isLoading" (click)="payment()">Payment<i nz-icon nzType="credit-card"></i>
+    </button>
+  </div>
+  <div style="padding:30px;">
+    <nz-card>
+    <input style="width: 300px;" formControlName="apiKey" nz-input placeholder="Paysoft API Key" />
+  </nz-card>
+  </div>
+  <div style="padding:30px;">
+    <nz-card>
+      <label>Payment Schedule</label>
+      <nz-select style="width: 300px; margin-left: 20px !important;" formControlName="schedule">
+        <nz-option nzValue="" nzLabel="Please Select payment schedule"></nz-option>
+        <nz-option nzValue="0" nzLabel="One Day" ></nz-option>
+        <nz-option nzValue="2" nzLabel="Same Day"></nz-option>
+        <nz-option nzValue="3" nzLabel="Real Time"></nz-option>
+      </nz-select>
+    </nz-card>
+  </div>
+  <div style="padding:30px;">
+    <nz-card>
+      <label>Payment Type</label>
+      <nz-select style="width: 300px; margin-left: 45px !important;" formControlName="type">
+        <nz-option nzValue="" nzLabel="Please Select Type"></nz-option>
+        <nz-option nzValue="0" nzLabel="Salaries"></nz-option>
+        <nz-option nzValue="1" nzLabel="Wages"></nz-option>
+        <nz-option nzValue="2" nzLabel="Creditors"></nz-option>
+      </nz-select>
+    </nz-card>
+  </div>
+  <!-- <app-welcome [props]="params"> </app-welcome> -->
+</form>

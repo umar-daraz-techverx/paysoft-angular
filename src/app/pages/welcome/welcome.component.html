@@ -1,0 +1,30 @@
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Sur Name</th>
+      <th>Client Code</th>
+      <th>Customer Code</th>
+      <th>Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.firstName }}</td>
+      <td>{{ data.surname }}</td>
+      <td>{{ data.clientCode }}</td>
+      <td>{{ data.customerCode }}</td>
+      <td>   
+        <button nz-button nzType="primary" (click)="showModal2(data.id)" [nzLoading]="isLoadingTwo"><i nz-icon nzType="dollar"></i>
+         
+          </button>
+          &nbsp;
+          <button nz-button nzType="primary" (click)="getDetail(data.clientCode)" [nzLoading]="isLoadingTwo"><i nz-icon nzType="file-pdf"></i>
+            
+            </button>
+        <nz-divider nzType="vertical"></nz-divider>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
