@@ -48,6 +48,7 @@ export class PaymentModalComponent {
     makePayment.employeeId = Number(JSON.parse(localStorage.getItem("id")));
     makePayment.service = Number(this.form.controls.schedule.value);
     makePayment.serviceType =Number(this.form.controls.type.value);
+    makePayment.key = this.form.controls.apiKey.value
     this.service.makePayment(makePayment).subscribe(res => {
       this.getStatus =true;
       this.isLoading = false;
